@@ -1,17 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <el-input boolean v-model="ipt1" @blur="changeIpt()"/>
+    <el-input boolean v-model="ipt2" @blur="changeIpt()"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data(){
+    return{
+      h1: '',
+      h2: '',
+    }
+  },
+  methods:{
+    changeIpt(){
+      setTimeout(()=>{
+        this.$alert('这是一段内容', '标题名称', {
+          confirmButtonText: '确定',
+        });
+      },100)
+    },
   }
 }
 </script>
